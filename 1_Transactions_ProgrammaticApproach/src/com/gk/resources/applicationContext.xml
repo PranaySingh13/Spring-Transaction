@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 					https://www.springframework.org/schema/beans/spring-beans.xsd
+        				http://www.springframework.org/schema/context 
+        				https://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- No need to declaration of properties in implemented classes-->
+	<bean id="transactionDao" class="com.gk.dao.TransactionDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+
+	<!-- No need to create bean object of JdbcTemplate class as
+	 	we have extended Dao Implemented class by JdbcDaoSupport class -->
+
+
+	<!-- Transaction Manager Bean -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- DataSource Configuration -->	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/springtxdb"/>
+		<property name="username" value="root"/>
+		<property name="password" value="root"/>
+	</bean>
+
+</beans>
+        
