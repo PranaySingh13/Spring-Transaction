@@ -1,2 +1,2 @@
 # Spring-Transaction
-This repository will contain all Spring Transaction module projects.
+This repository will contain all Spring Transaction module projects.As in this Module projects are not created by maven implementations so we have to add the following jars to the projects. So i had created a userdefined library in my workspace which i had use in every projects of this module. The following jars which i have included are:- spring-tx-4.3.28.RELEASE,spring-aop-4.3.28.RELEASE,spring-aspects-4.3.28.RELEASE,spring-core-4.3.28.RELEASE,spring-beans-4.3.28.RELEASE,spring-context-4.3.28.RELEASE,spring-context-support-4.3.28.RELEASE,spring-expression-4.3.28.RELEASE,commons-logging-1.2,aspectjweaver-1.9.5,aspectjrt-1.9.5,aopalliance-1.0.
